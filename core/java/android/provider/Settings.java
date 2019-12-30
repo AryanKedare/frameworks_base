@@ -5586,6 +5586,16 @@ public final class Settings {
         /**
          * Use doubletap as doze pulse triggers
          * @hide
+         * Whether to show status bar on lockscreen
+         * @hide
+         */
+        public static final String LOCKSCREEN_STATUS_BAR = "lockscreen_status_bar";
+
+        /**
+         * IMPORTANT: If you add a new public settings you also have to add it to
+         * PUBLIC_SETTINGS below. If the new setting is hidden you have to add
+         * it to PRIVATE_SETTINGS below. Also add a validator that can validate
+         * the setting value. See an example above.
          */
         public static final String DOZE_TRIGGER_DOUBLETAP = "doze_trigger_doubletap";
 
