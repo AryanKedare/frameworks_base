@@ -47,7 +47,7 @@ public class QSTileView extends QSTileBaseView {
     private ImageView mPadLock;
     private int mState;
     private ViewGroup mLabelContainer;
-    private View mExpandIndicator;
+    private ImageView mExpandIndicator;
     private View mExpandSpace;
     private ColorStateList mColorLabelDefault;
     private ColorStateList mColorLabelActive;
@@ -133,13 +133,19 @@ public class QSTileView extends QSTileBaseView {
             mSecondLine.setVisibility(TextUtils.isEmpty(state.secondaryLabel) ? View.GONE
                     : View.VISIBLE);
         }
-        boolean setQsUseNewTint = Settings.System.getIntForUser(getContext().getContentResolver(),
-                Settings.System.QS_PANEL_BG_USE_NEW_TINT, 1, UserHandle.USER_CURRENT) == 1;
-        if (setQsUseNewTint) {
+
+        int setQsUseNewTint = Settings.System.getIntForUser(getContext().getContentResolver(),
+                Settings.System.QS_PANEL_BG_USE_NEW_TINT, 2, UserHandle.USER_CURRENT);
+
+        if (setQsUseNewTint == 1) {
             if (state.state == Tile.STATE_ACTIVE) {
                 mLabel.setTextColor(mColorLabelActive);
+                mExpandIndicator.setImageTintList(mColorLabelActive);
+                mSecondLine.setTextColor(mColorLabelActive);
             } else if (state.state == Tile.STATE_INACTIVE) {
                 mLabel.setTextColor(mColorLabelDefault);
+                mExpandIndicator.setImageTintList(mColorLabelDefault);
+                mSecondLine.setTextColor(mColorLabelDefault);
             }
         }
         boolean dualTarget = DUAL_TARGET_ALLOWED && state.dualTarget;

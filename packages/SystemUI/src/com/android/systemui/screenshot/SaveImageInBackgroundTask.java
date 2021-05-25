@@ -403,7 +403,6 @@ class SaveImageInBackgroundTask extends AsyncTask<Void, Void, Void> {
         return scrollActionBuilder.build();
     }
 
-
     private int getUserHandleOfForegroundApplication(Context context) {
         // This logic matches
         // com.android.systemui.statusbar.phone.PhoneStatusBarPolicy#updateManagedProfile

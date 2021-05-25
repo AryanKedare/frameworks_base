@@ -5057,12 +5057,6 @@ public final class Settings {
         public static final String DOUBLE_TAP_SLEEP_LOCKSCREEN = "double_tap_sleep_lockscreen";
 
         /**
-         * Three Finger Gesture from Oppo
-         * @hide
-         */
-
-        public static final String THREE_FINGER_GESTURE = "three_finger_gesture";
-        /**
          * Unlock keystore with fingerprint after reboot
          * @hide
          */
@@ -5510,6 +5504,12 @@ public final class Settings {
          */
         public static final String BACK_SWIPE_EXTENDED = "back_swipe_extended";
 
+         /**
+         * Swipe to screenshot
+         * @hide
+         */
+        public static final String SWIPE_TO_SCREENSHOT = "swipe_to_screenshot";
+
         /**
          * Gestures nav: left long back swipe action
          * @hide
@@ -5578,13 +5578,13 @@ public final class Settings {
         public static final String STATUS_BAR_BRIGHTNESS_CONTROL = "status_bar_brightness_control";
 
         /**
-         * Settings dashboard icon style
+         * Use doubletap as doze pulse triggers
          * @hide
          */
-        public static final String THEMING_SETTINGS_DASHBOARD_ICONS = "theming_settings_dashboard_icons";
+        public static final String DOZE_TRIGGER_DOUBLETAP = "doze_trigger_doubletap";
 
         /**
-         * Use doubletap as doze pulse triggers
+         * Whether StatusBar icons should use app icon
          * @hide
          * Whether to show status bar on lockscreen
          * @hide
@@ -5597,7 +5597,7 @@ public final class Settings {
          * it to PRIVATE_SETTINGS below. Also add a validator that can validate
          * the setting value. See an example above.
          */
-        public static final String DOZE_TRIGGER_DOUBLETAP = "doze_trigger_doubletap";
+        public static final String STATUSBAR_ICONS_STYLE = "statusbar_icons_style";
 
         /**
          * Keys we no longer back up under the current schema, but want to continue to
@@ -5786,6 +5786,8 @@ public final class Settings {
             PRIVATE_SETTINGS.add(DISPLAY_COLOR_ADJUSTMENT);
             PRIVATE_SETTINGS.add(DISPLAY_PICTURE_ADJUSTMENT);
             PRIVATE_SETTINGS.add(LIVE_DISPLAY_HINTED);
+            PRIVATE_SETTINGS.add(SWIPE_TO_SCREENSHOT);
+            PRIVATE_SETTINGS.add(STATUSBAR_ICONS_STYLE);
         }
         /**
          * These entries are considered common between the personal and the managed profile,
